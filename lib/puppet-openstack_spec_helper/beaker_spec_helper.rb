@@ -6,7 +6,7 @@ run_puppet_install_helper
 
 RSpec.configure do |c|
   # Project root
-  proj_root = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+  proj_root = File.expand_path(File.join(Dir.getwd, '..'))
   modname = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
 
   # Readable test descriptions
