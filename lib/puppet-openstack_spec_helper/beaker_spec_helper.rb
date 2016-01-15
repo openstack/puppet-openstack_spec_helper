@@ -6,8 +6,13 @@ run_puppet_install_helper
 
 RSpec.configure do |c|
   # Project root
-  proj_root = File.expand_path(File.join(Dir.getwd, '..'))
+  proj_root = File.expand_path(File.join(Dir.getwd))
   modname = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
+
+  # Make sure proj_root is the real project root
+  unless File.exists?("#{proj_root}/metadata.json")
+    raise "bundle exec rspec spec/acceptance needs be run from module root."
+  end
 
   # Readable test descriptions
   c.formatter = :documentation
