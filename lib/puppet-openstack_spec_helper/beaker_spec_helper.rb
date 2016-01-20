@@ -1,6 +1,7 @@
 # Function for spec_helper_acceptance.rb goes here
 require 'beaker-rspec'
 require 'beaker/puppet_install_helper'
+require 'puppet-openstack_spec_helper/shared_examples_acceptance'
 
 run_puppet_install_helper
 
