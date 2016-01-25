@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# functions - puppet-openstack_spec_helper specific functions
+#
+
+install_gems() {
+  mkdir .bundled_gems
+  export GEM_HOME=`pwd`/.bundled_gems
+
+  # use puppet-nova to test the gem
+  if [ -e /usr/zuul-env/bin/zuul-cloner ] ; then
+      /usr/zuul-env/bin/zuul-cloner --cache-dir /opt/git \
+          git://git.openstack.org openstack/puppet-nova
+  else
+      git clone git://git.openstack.org/openstack/puppet-nova openstack/puppet-nova
+  fi
+  cd openstack/puppet-nova
+
+  # Modify Gemfile to use local library and not the one on git
+  # so we can actually test the current state of the gem.
+  sed -i "s/.*git => 'https:\/\/git.openstack.org\/openstack\/puppet-openstack_spec_helper.*/      :path => '..\/..',/" Gemfile
+
+  # Install dependencies
+  gem install bundler --no-rdoc --no-ri --verbose
+  $GEM_HOME/bin/bundle install
+}

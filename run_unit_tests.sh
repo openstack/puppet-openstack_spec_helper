@@ -13,25 +13,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-mkdir .bundled_gems
-export GEM_HOME=`pwd`/.bundled_gems
+export SCRIPT_DIR=$(cd `dirname $0` && pwd -P)
+source $SCRIPT_DIR/functions
 
-# use puppet-nova to test the gem
-if [ -e /usr/zuul-env/bin/zuul-cloner ] ; then
-    /usr/zuul-env/bin/zuul-cloner --cache-dir /opt/git \
-        git://git.openstack.org openstack/puppet-nova
-else
-    git clone git://git.openstack.org/openstack/puppet-nova openstack/puppet-nova
-fi
-cd openstack/puppet-nova
-
-# Modify Gemfile to use local library and not the one on git
-# so we can actually test the current state of the gem.
-sed -i "s/.*git => 'https:\/\/git.openstack.org\/openstack\/puppet-openstack_spec_helper.*/      :path => '..\/..',/" Gemfile
-
-# Install dependencies
-gem install bundler --no-rdoc --no-ri --verbose
-$GEM_HOME/bin/bundle install
+install_gems
 
 # run unit tests
 $GEM_HOME/bin/bundle exec rake spec SPEC_OPTS='--format documentation'
