@@ -9,14 +9,12 @@ module OSDefaults
     [
       { 'operatingsystem'        => 'CentOS',
         'operatingsystemrelease' => [ '7.0' ] },
-      { 'operatingsystem'        => 'RedHat',
-        'operatingsystemrelease' => [ '7.0' ] },
       { 'operatingsystem'        => 'Fedora',
-        'operatingsystemrelease' => [ '21', '22' ] },
+        'operatingsystemrelease' => [ '22' ] },
       { 'operatingsystem'        => 'Ubuntu',
         'operatingsystemrelease' => [ '14.04' ] },
       { 'operatingsystem'        => 'Debian',
-        'operatingsystemrelease' => [ '7', '8' ] }
+        'operatingsystemrelease' => [ '8' ] }
     ]
   end
 end
