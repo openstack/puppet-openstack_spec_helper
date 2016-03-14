@@ -5,10 +5,14 @@ require 'puppet-openstack_spec_helper/shared_examples_acceptance'
 
 run_puppet_install_helper
 
+Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each { |f| require f }
+
 RSpec.configure do |c|
   # Project root
   proj_root = File.expand_path(File.join(Dir.getwd))
-  modname = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
+  module_name = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
+
+  c.include PuppetOpenstackSpecHelpers::SmokeTest
 
   # Make sure proj_root is the real project root
   unless File.exists?("#{proj_root}/metadata.json")
@@ -51,8 +55,8 @@ RSpec.configure do |c|
       on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} bash #{repo}/install_modules.sh"
 
       # Install the module being tested
-      on host, "rm -fr /etc/puppet/modules/#{modname}"
-      puppet_module_install(:source => proj_root, :module_name => modname)
+      on host, "rm -fr /etc/puppet/modules/#{module_name}"
+      puppet_module_install(:source => proj_root, :module_name => module_name)
 
       on host, "rm -fr #{repo}"
 

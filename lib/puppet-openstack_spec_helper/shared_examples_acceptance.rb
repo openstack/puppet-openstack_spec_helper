@@ -8,6 +8,17 @@ shared_examples_for 'puppet_apply_success' do |manifest|
   end
 end
 
+# Test a normal puppet run with idempotency using files in the tests
+# directory (smoke testing)
+shared_examples_for 'puppet_apply_success_from_tests' do |test_file|
+  it 'should apply the manifest without error' do
+    apply_manifest(smoke_test_named(test_file), :catch_failures => true)
+  end
+  it 'should be idempotent' do
+    apply_manifest(smoke_test_named(test_file), :catch_changes => true)
+  end
+end
+
 # Check that a file exists and its content match the one given as
 # argument.  The argument can be a multiline string or an array of
 # regexp.
