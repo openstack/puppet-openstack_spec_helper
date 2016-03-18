@@ -1,0 +1,10 @@
+---
+prelude: >
+  This is a first release of openstack_spec_helper.
+  This gem provides helper utilities for running rspec tests in the
+  OpenStack Puppet Modules.
+features:
+  - Add beaker spec helper.
+  - Add Rake tasks.
+  - Add Defaults facts.
+  - Add shared_examples_acceptance.
