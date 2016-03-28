@@ -1,0 +1,4 @@
+---
+features:
+  - Manage Gems dependencies from all Puppet OpenStack modules in gemspec file,
+    so we have a single place where we can deal with the gems.
