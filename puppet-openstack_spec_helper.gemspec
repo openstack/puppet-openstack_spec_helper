@@ -15,4 +15,26 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  # dependencies that are needed to run puppet-lint and rspec-puppet
+  spec.add_dependency 'puppetlabs_spec_helper'
+  spec.add_dependency 'rspec-puppet', ['~> 2.2.0']
+  spec.add_dependency 'rspec-puppet-facts'
+  spec.add_dependency 'metadata-json-lint'
+  spec.add_dependency 'puppet-lint-param-docs'
+  spec.add_dependency 'puppet-lint-absolute_classname-check'
+  spec.add_dependency 'puppet-lint-absolute_template_path'
+  spec.add_dependency 'puppet-lint-trailing_newline-check'
+  spec.add_dependency 'puppet-lint-unquoted_string-check'
+  spec.add_dependency 'puppet-lint-leading_zero-check'
+  spec.add_dependency 'puppet-lint-variable_contains_upcase'
+  spec.add_dependency 'puppet-lint-numericvariable'
+  spec.add_dependency 'json'
+  spec.add_dependency 'netaddr'
+  spec.add_dependency 'webmock'
+
+  # dependencies that are needed to run beaker-rspec
+  spec.add_dependency 'beaker-rspec'
+  spec.add_dependency 'beaker-puppet_install_helper'
+  spec.add_dependency 'r10k'
 end
