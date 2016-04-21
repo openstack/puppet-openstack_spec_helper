@@ -3,6 +3,7 @@ require 'beaker-rspec'
 require 'beaker/puppet_install_helper'
 require 'puppet-openstack_spec_helper/shared_examples_acceptance'
 
+run_puppet_install_helper
 
 Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each { |f| require f }
 
@@ -25,13 +26,6 @@ RSpec.configure do |c|
   c.before :suite do
     # Install module and dependencies
     hosts.each do |host|
-
-      # Workaround until https://review.openstack.org/#/c/308426/ is resolved
-      if os[:family].casecmp('RedHat') == 0
-        on host, "yum remove -y puppetlabs-release"
-      end
-
-      run_puppet_install_helper
 
       # install git
       install_package host, 'git'
