@@ -2,7 +2,10 @@
 # operating systems for the tests in this module.
 module OSDefaults
   def self.get_facts(extra_facts={})
-    { :os_service_default => '<SERVICE DEFAULT>' }.merge(extra_facts)
+    {
+      :os_service_default => '<SERVICE DEFAULT>',
+      :puppetversion      => Puppet.version
+    }.merge(extra_facts)
   end
 
   def self.get_supported_os
