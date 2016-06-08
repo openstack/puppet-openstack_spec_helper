@@ -33,6 +33,7 @@ RSpec.configure do |c|
       zuul_ref = ENV['ZUUL_REF']
       zuul_branch = ENV['ZUUL_BRANCH']
       zuul_url = ENV['ZUUL_URL']
+      puppet_maj_version = ENV['PUPPET_MAJ_VERSION']
 
       repo = 'openstack/puppet-openstack-integration'
 
@@ -52,7 +53,7 @@ RSpec.configure do |c|
         on host, "git clone https://git.openstack.org/#{repo} #{repo}"
       end
 
-      on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} bash #{repo}/install_modules.sh"
+      on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
 
       # Install the module being tested
       on host, "rm -fr /etc/puppet/modules/#{module_name}"
