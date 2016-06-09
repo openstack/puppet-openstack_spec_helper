@@ -60,9 +60,6 @@ RSpec.configure do |c|
       puppet_module_install(:source => proj_root, :module_name => module_name)
 
       on host, "rm -fr #{repo}"
-
-      # List modules installed to help with debugging
-      on host, puppet('module','list'), { :acceptable_exit_codes => 0 }
     end
   end
 end
