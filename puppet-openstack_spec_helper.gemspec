@@ -22,8 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rspec-puppet-facts'
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'puppet-lint-param-docs'
-  # https://github.com/voxpupuli/puppet-lint-absolute_classname-check/issues/6
-  spec.add_dependency 'puppet-lint-absolute_classname-check', ['0.1.3']
+  spec.add_dependency 'puppet-lint-absolute_classname-check'
   spec.add_dependency 'puppet-lint-absolute_template_path'
   spec.add_dependency 'puppet-lint-trailing_newline-check'
   spec.add_dependency 'puppet-lint-unquoted_string-check'
