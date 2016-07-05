@@ -8,9 +8,9 @@ shared_examples_for 'puppet_apply_success' do |manifest|
   end
 end
 
-# Test a normal puppet run with idempotency using files in the tests
-# directory (smoke testing)
-shared_examples_for 'puppet_apply_success_from_tests' do |test_file|
+# Test a normal puppet run with idempotency using files in the
+# examples/tests directory (smoke testing)
+shared_examples_for 'puppet_apply_success_from_example' do |test_file|
   it 'should apply the manifest without error' do
     apply_manifest(smoke_test_named(test_file), :catch_failures => true)
   end
