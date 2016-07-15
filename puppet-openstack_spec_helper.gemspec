@@ -39,8 +39,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'specinfra', ['2.59.0']
 
   # dependencies that are needed to run beaker-rspec
-  # TODO(aschultz): Pin due to BKR-884
-  spec.add_dependency 'beaker', ['2.46.0']
   spec.add_dependency 'beaker-rspec'
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'r10k'
