@@ -33,6 +33,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'json'
   spec.add_dependency 'netaddr'
   spec.add_dependency 'webmock'
+  # json_pure 2.0.2 requires ruby >= 2.0 and we don't have it on Ubuntu Trusty
+  spec.add_dependency 'json_pure', ['2.0.1']
 
   # dependencies that are needed to run beaker-rspec
   spec.add_dependency 'beaker-rspec'
