@@ -37,6 +37,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'google-api-client', ['0.9.4']
   # latest specinfra broke us, we pin it until we figure what's wrong.
   spec.add_dependency 'specinfra', ['2.59.0']
+  # json_pure 2.0.2 requires ruby >= 2.0 and we don't have it on Ubuntu Trusty
+  spec.add_dependency 'json_pure', ['2.0.1']
 
   # dependencies that are needed to run beaker-rspec
   spec.add_dependency 'beaker-rspec'
