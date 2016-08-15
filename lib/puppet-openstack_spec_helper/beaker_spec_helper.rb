@@ -44,7 +44,9 @@ RSpec.configure do |c|
         zuul_clone_cmd = '/usr/zuul-env/bin/zuul-cloner '
         zuul_clone_cmd += '--cache-dir /opt/git '
         zuul_clone_cmd += "--zuul-ref #{zuul_ref} "
-        zuul_clone_cmd += "--zuul-branch #{zuul_branch} "
+        # force to clone puppet-openstack-integration stable/mitaka for puppet-ceph
+        # where ZUUL_BRANCH would be stable/hammer
+        zuul_clone_cmd += '--zuul-branch stable/mitaka '
         zuul_clone_cmd += "--zuul-url #{zuul_url} "
         zuul_clone_cmd += "git://git.openstack.org #{repo}"
         on host, zuul_clone_cmd
