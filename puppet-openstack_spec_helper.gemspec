@@ -17,8 +17,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # dependencies that are needed to run puppet-lint and rspec-puppet
-  #TODO(aschultz): 1.2.0 pulled in a gem with ruby >= 2.2 requirementsr
-  spec.add_dependency 'puppetlabs_spec_helper', ['1.1.1']
+  spec.add_dependency 'puppetlabs_spec_helper'
   spec.add_dependency 'rspec-puppet', ['~> 2.2.0']
   spec.add_dependency 'rspec-puppet-facts'
   spec.add_dependency 'metadata-json-lint'
