@@ -1,0 +1,6 @@
+---
+features:
+  - If Puppetfile_extras file does exist in a Puppet module, the spec_helper will copy
+    its content to the end of Puppet OpenStack Puppetfile. It will allow external modules
+    (for example puppet-tripleo) to re-use Puppet OpenStack tooling, but adding more modules
+    in the tests.
