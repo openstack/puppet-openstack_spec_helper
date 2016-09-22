@@ -1,0 +1,3 @@
+---
+features:
+  - Added a default value of '2' for os_workers fact for spec tests.

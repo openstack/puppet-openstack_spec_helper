@@ -11,5 +11,6 @@ RSpec.configure do |c|
 
   # add custom facts globally for anyone using rspec-pupet-facts
   add_custom_fact :os_service_default, '<SERVICE DEFAULT>'
+  add_custom_fact :os_workers, '2'
   add_custom_fact :puppetversion, Puppet.version
 end
