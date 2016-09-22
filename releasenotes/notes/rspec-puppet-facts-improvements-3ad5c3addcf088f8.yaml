@@ -1,0 +1,10 @@
+---
+features:
+  - Added a new facts module that can be pulled in by the other
+    puppet modules to be able to manage the inclusion of
+    rspec-puppet-facts and the related default facts in a single
+    inclusion.
+other:
+  - Require a minimum of rspec-puppet-facts 1.7.0 due to the addition
+    of the add_custom_fact function which was not available until this
+    version.

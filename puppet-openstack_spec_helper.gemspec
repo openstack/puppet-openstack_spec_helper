@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   # dependencies that are needed to run puppet-lint and rspec-puppet
   spec.add_dependency 'puppetlabs_spec_helper'
   spec.add_dependency 'rspec-puppet', ['~> 2.2.0']
-  spec.add_dependency 'rspec-puppet-facts'
+  spec.add_dependency 'rspec-puppet-facts', ['>= 1.7.0']
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'puppet-lint-param-docs'
   spec.add_dependency 'puppet-lint-absolute_classname-check'
