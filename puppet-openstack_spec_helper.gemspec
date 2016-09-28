@@ -36,6 +36,11 @@ Gem::Specification.new do |spec|
   # json_pure 2.0.2 requires ruby >= 2.0 and we don't have it on Ubuntu Trusty
   spec.add_dependency 'json_pure', ['2.0.1']
 
+  # Beaker 3.0.0 fails to run in Puppet Openstack CI
+  # LoadError: cannot load such file -- serverspec
+  # While we're investigating it, let's pin Beaker to 2.x releases.
+  spec.add_dependency 'beaker', ['< 3.0.0']
+
   # dependencies that are needed to run beaker-rspec
   spec.add_dependency 'beaker-rspec'
   spec.add_dependency 'beaker-puppet_install_helper'
