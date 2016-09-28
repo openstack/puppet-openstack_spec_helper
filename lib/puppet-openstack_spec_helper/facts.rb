@@ -1,5 +1,5 @@
 require 'rspec-puppet-facts'
-require 'defaults'
+require 'puppet-openstack_spec_helper/defaults'
 include RspecPuppetFacts
 
 RSpec.configure do |c|
