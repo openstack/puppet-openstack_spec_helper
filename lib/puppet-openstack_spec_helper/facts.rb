@@ -5,8 +5,8 @@ include RspecPuppetFacts
 RSpec.configure do |c|
   # TODO(aschultz): remove this after all tests are converted to OSDefaults
   # instead of referenceing @defaults_facts directly
-  c.before:each do
-    @default_Facts = OSDefaults.get_facts
+  c.before :each do
+    @default_facts = OSDefaults.get_facts
   end
 
   # add custom facts globally for anyone using rspec-pupet-facts
