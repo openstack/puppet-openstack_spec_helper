@@ -35,6 +35,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webmock'
   # json_pure 2.0.2 requires ruby >= 2.0 and we don't have it on Ubuntu Trusty
   spec.add_dependency 'json_pure', ['2.0.1']
+  # addressable 2.5.0 pulls in public_suffix >= 2.0 requires ruby >= 2.0
+  spec.add_dependency 'addressable', ['< 2.5.0']
 
   # Beaker 3.0.0 fails to run in Puppet Openstack CI
   # LoadError: cannot load such file -- serverspec
