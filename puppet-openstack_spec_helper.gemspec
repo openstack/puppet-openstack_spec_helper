@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'puppet-lint-numericvariable'
   spec.add_dependency 'json'
   spec.add_dependency 'netaddr'
-  spec.add_dependency 'webmock'
+  spec.add_dependency 'webmock', ['< 2.3.0']
   # json_pure 2.0.2 requires ruby >= 2.0 and we don't have it on Ubuntu Trusty
   spec.add_dependency 'json_pure', ['2.0.1']
   # addressable 2.5.0 pulls in public_suffix >= 2.0 requires ruby >= 2.0
