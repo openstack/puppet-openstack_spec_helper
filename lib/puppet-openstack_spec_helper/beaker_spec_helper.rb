@@ -55,6 +55,12 @@ RSpec.configure do |c|
 
       on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
 
+      # Make sure EPEL is not installed.
+      # It can happens in OpenStack Infra when using centos7 images.
+      if os[:family].casecmp('RedHat') == 0
+        on host, "rpm -e epel-release || true"
+      end
+
       # Install the module being tested
       on host, "rm -fr /etc/puppet/modules/#{module_name}"
       puppet_module_install(:source => proj_root, :module_name => module_name)
