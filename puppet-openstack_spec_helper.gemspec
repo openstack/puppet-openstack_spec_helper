@@ -38,6 +38,9 @@ Gem::Specification.new do |spec|
   # addressable 2.5.0 pulls in public_suffix >= 2.0 requires ruby >= 2.0
   spec.add_dependency 'addressable', ['< 2.5.0']
 
+  # Things that get pinned because we can't have nice things (new ruby > 2.0)
+  spec.add_dependency 'fast_gettext', ['< 1.2.0']
+
   # Beaker 3.0.0 fails to run in Puppet Openstack CI
   # LoadError: cannot load such file -- serverspec
   # While we're investigating it, let's pin Beaker to 2.x releases.
