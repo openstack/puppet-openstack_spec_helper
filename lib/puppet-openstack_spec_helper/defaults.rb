@@ -14,9 +14,9 @@ module OSDefaults
       { 'operatingsystem'        => 'CentOS',
         'operatingsystemrelease' => [ '7.0' ] },
       { 'operatingsystem'        => 'Fedora',
-        'operatingsystemrelease' => [ '22' ] },
+        'operatingsystemrelease' => [ '24' ] },
       { 'operatingsystem'        => 'Ubuntu',
-        'operatingsystemrelease' => [ '14.04' ] },
+        'operatingsystemrelease' => [ '16.04' ] },
       { 'operatingsystem'        => 'Debian',
         'operatingsystemrelease' => [ '8' ] }
     ]
