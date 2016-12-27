@@ -31,9 +31,9 @@ RSpec.configure do |c|
       install_package host, 'git'
 
       # install hiera when needed
-      r = on host, "test -e spec/fixtures/hieradata/hiera.yaml", { :acceptable_exit_codes => [0,1] }
+      r = on host, "test -e #{proj_root}/spec/fixtures/hieradata/hiera.yaml", { :acceptable_exit_codes => [0,1] }
       if r.exit_code == 0
-        scp_to hosts, File.join(proj_root, 'spec/fixtures/hieradata/hiera.yaml'), '/etc/puppet/hiera.yaml'
+        scp_to hosts, "#{proj_root}/spec/fixtures/hieradata/hiera.yaml", '/etc/puppet/hiera.yaml'
       end
 
       zuul_ref = ENV['ZUUL_REF']
