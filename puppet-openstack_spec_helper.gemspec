@@ -49,6 +49,7 @@ Gem::Specification.new do |spec|
 
   # dependencies that are needed to run beaker-rspec
   spec.add_dependency 'beaker-rspec'
-  spec.add_dependency 'beaker-puppet_install_helper'
+  # pin to 0.5.0 because 0.6.0 switched to puppet agent which breaks puppet-swift
+  spec.add_dependency 'beaker-puppet_install_helper', ['0.5.0']
   spec.add_dependency 'r10k'
 end
