@@ -10,6 +10,7 @@ PuppetSyntax.exclude_paths ||= []
 PuppetSyntax.exclude_paths << "spec/fixtures/**/*"
 PuppetSyntax.exclude_paths << "pkg/**/*"
 PuppetSyntax.exclude_paths << "vendor/**/*"
+PuppetSyntax.fail_on_deprecation_notices = false
 
 Rake::Task[:lint].clear
 PuppetLint::RakeTask.new :lint do |config|
