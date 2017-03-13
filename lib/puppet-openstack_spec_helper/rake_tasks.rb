@@ -16,7 +16,7 @@ Rake::Task[:lint].clear
 PuppetLint::RakeTask.new :lint do |config|
   config.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
   config.fail_on_warnings = true
-  config.log_format = '%{path}:%{linenumber}:%{KIND}: %{message}'
+  config.log_format = '%{path}:%{line}:%{KIND}: %{message}'
   config.disable_checks = ["80chars", "class_inherits_from_params_class", "only_variable_string"]
 end
 
