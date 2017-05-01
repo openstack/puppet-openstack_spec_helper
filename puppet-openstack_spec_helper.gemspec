@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'fast_gettext', ['< 1.2.0']
   spec.add_dependency 'nokogiri', ['< 1.7.0']
   # fog-core 1.44.0 requires xmlrpc 0.3.0 which requires ruby 2.3.0 which is not available on centos7
-  spec.add_dependency 'fog-core', ['< 1.44.0']
+  spec.add_dependency 'fog-core', ['!= 1.44.0']
 
   # Beaker 3.0.0 fails to run in Puppet Openstack CI
   # LoadError: cannot load such file -- serverspec
