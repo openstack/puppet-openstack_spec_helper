@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'json'
   spec.add_dependency 'netaddr'
   spec.add_dependency 'webmock'
+  spec.add_dependency 'etcdv3'
 
   # Things that get pinned because we can't have nice things (new ruby > 2.0)
   spec.add_dependency 'fast_gettext', ['< 1.2.0']
