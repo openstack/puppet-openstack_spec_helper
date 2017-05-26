@@ -9,7 +9,7 @@ RSpec.configure do |c|
     @default_facts = OSDefaults.get_facts
   end
 
-  # add custom facts globally for anyone using rspec-pupet-facts
+  # add custom facts globally for anyone using rspec-puppet-facts
   add_custom_fact :os_service_default, '<SERVICE DEFAULT>'
   add_custom_fact :os_workers, '2'
 end
