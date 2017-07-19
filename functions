@@ -19,6 +19,9 @@ install_gems() {
   # Modify Gemfile to use local library and not the one on git
   # so we can actually test the current state of the gem.
   sed -i "s/.*git     => 'https:\/\/git.openstack.org\/openstack\/puppet-openstack_spec_helper.*/      :path => '..\/..',/" Gemfile
+  # NOTE(aschultz): in order for this to work we need to nuke the branch line
+  # since we're replacing the repository with a path
+  sed -i "/.*branch[[:space:]]*=> 'stable\/.*/d" Gemfile
 
   # Install dependencies
   gem install bundler --no-rdoc --no-ri --verbose
