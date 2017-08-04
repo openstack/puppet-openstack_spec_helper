@@ -67,11 +67,6 @@ task :spec_prep do
     if File.exists?("#{Dir.pwd}/Puppetfile_extras")
       sh("cat #{Dir.pwd}/Puppetfile_extras >> #{repo}/Puppetfile")
     end
-    # Allow to a repository to have extra modules that are not
-    # in puppet-openstack-integration
-    if File.exists?("#{Dir.pwd}/Puppetfile_extras")
-      sh("cat #{Dir.pwd}/Puppetfile_extras >> #{repo}/Puppetfile")
-    end
     script = ['env']
     script += ["PUPPETFILE_DIR=#{Dir.pwd}/spec/fixtures/modules"]
     script += ["ZUUL_REF=#{zuul_ref}"]
