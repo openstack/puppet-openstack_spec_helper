@@ -12,7 +12,7 @@ module OSDefaults
   def self.get_supported_os
     [
       { 'operatingsystem'        => 'CentOS',
-        'operatingsystemrelease' => [ '7.0' ] },
+        'operatingsystemrelease' => [ '7' ] },
       { 'operatingsystem'        => 'Fedora',
         'operatingsystemrelease' => [ '24' ] },
       { 'operatingsystem'        => 'Ubuntu',
