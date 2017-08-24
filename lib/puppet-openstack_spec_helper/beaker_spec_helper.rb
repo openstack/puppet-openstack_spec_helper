@@ -54,6 +54,7 @@ RSpec.configure do |c|
       end
 
       on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
+      on host, "WRITE_FACTS=true bash #{repo}/configure_facts.sh"
 
       # Make sure EPEL is not installed.
       # It can happens in OpenStack Infra when using centos7 images.
