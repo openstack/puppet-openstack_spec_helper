@@ -60,7 +60,7 @@ task :spec_prep do
       zuul_clone_cmd += ['git://git.openstack.org', "#{repo}"]
       sh(*zuul_clone_cmd)
     else
-      sh("git clone https://git.openstack.org/#{repo} #{repo}")
+      sh("git clone https://git.openstack.org/#{repo} -b stable/pike #{repo}")
     end
     # Allow to a repository to have extra modules that are not
     # in puppet-openstack-integration
