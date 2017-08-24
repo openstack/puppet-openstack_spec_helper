@@ -54,6 +54,7 @@ RSpec.configure do |c|
       end
 
       on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
+      on host, "WRITE_FACTS=true bash #{repo}/configure_facts.sh"
 
       # Install the module being tested
       on host, "rm -fr /etc/puppet/modules/#{module_name}"
