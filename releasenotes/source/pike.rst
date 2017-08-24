@@ -1,7 +1,7 @@
 ===================================
- Ocata Series Release Notes
+ Pike Series Release Notes
 ===================================
 
 .. release-notes::
-   :branch: origin/stable/ocata
+   :branch: origin/stable/pike
 
