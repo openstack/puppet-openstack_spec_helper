@@ -17,18 +17,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # dependencies that are needed to run puppet-lint and rspec-puppet
+  spec.add_dependency 'puppet-lint', ['~> 1.1.0']
   spec.add_dependency 'puppetlabs_spec_helper'
   spec.add_dependency 'rspec-puppet', ['~> 2.2.0']
   spec.add_dependency 'rspec-puppet-facts'
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'puppet-lint-param-docs'
   spec.add_dependency 'puppet-lint-absolute_classname-check'
-  spec.add_dependency 'puppet-lint-absolute_template_path'
-  spec.add_dependency 'puppet-lint-trailing_newline-check'
   spec.add_dependency 'puppet-lint-unquoted_string-check'
   spec.add_dependency 'puppet-lint-leading_zero-check'
-  spec.add_dependency 'puppet-lint-variable_contains_upcase'
-  spec.add_dependency 'puppet-lint-numericvariable'
   spec.add_dependency 'json'
   spec.add_dependency 'netaddr'
   spec.add_dependency 'webmock'
