@@ -17,7 +17,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # dependencies that are needed to run puppet-lint and rspec-puppet
-  spec.add_dependency 'puppet-lint', ['~> 2.3.0']
+  # NOTE(mwhahaha): pinning to 2.3.0 as 2.3.1 just fails siliently
+  spec.add_dependency 'puppet-lint', ['2.3.0']
   spec.add_dependency 'puppetlabs_spec_helper'
   spec.add_dependency 'rspec-puppet', ['~> 2.3.0']
   spec.add_dependency 'rspec-puppet-facts', ['>= 1.7.0']
