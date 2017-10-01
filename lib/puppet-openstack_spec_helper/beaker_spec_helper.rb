@@ -30,9 +30,7 @@ RSpec.configure do |c|
       # install git
       install_package host, 'git'
 
-      zuul_ref = ENV['ZUUL_REF']
       zuul_branch = ENV['ZUUL_BRANCH']
-      zuul_url = ENV['ZUUL_URL']
       puppet_maj_version = ENV['PUPPET_MAJ_VERSION']
 
       repo = 'openstack/puppet-openstack-integration'
@@ -44,16 +42,14 @@ RSpec.configure do |c|
       if r.exit_code == 0
         zuul_clone_cmd = '/usr/zuul-env/bin/zuul-cloner '
         zuul_clone_cmd += '--cache-dir /opt/git '
-        zuul_clone_cmd += "--zuul-ref #{zuul_ref} "
         zuul_clone_cmd += "--zuul-branch #{zuul_branch} "
-        zuul_clone_cmd += "--zuul-url #{zuul_url} "
         zuul_clone_cmd += "git://git.openstack.org #{repo}"
         on host, zuul_clone_cmd
       else
         on host, "git clone https://git.openstack.org/#{repo} -b stable/ocata #{repo}"
       end
 
-      on host, "ZUUL_REF=#{zuul_ref} ZUUL_BRANCH=#{zuul_branch} ZUUL_URL=#{zuul_url} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
+      on host, "ZUUL_BRANCH=#{zuul_branch} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
       on host, "WRITE_FACTS=true bash #{repo}/configure_facts.sh"
 
       # Make sure EPEL is not installed.
