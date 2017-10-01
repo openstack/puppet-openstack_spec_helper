@@ -46,17 +46,13 @@ task :spec_prep do
     sh(*r10k)
   else
   # otherwise, use official OpenStack Puppetfile
-    zuul_ref = ENV['ZUUL_REF']
     zuul_branch = ENV['ZUUL_BRANCH']
-    zuul_url = ENV['ZUUL_URL']
     repo = 'openstack/puppet-openstack-integration'
     rm_rf(repo)
     if File.exists?('/usr/zuul-env/bin/zuul-cloner')
       zuul_clone_cmd = ['/usr/zuul-env/bin/zuul-cloner']
       zuul_clone_cmd += ['--cache-dir', '/opt/git']
-      zuul_clone_cmd += ['--zuul-ref', "#{zuul_ref}"]
       zuul_clone_cmd += ['--zuul-branch', "#{zuul_branch}"]
-      zuul_clone_cmd += ['--zuul-url', "#{zuul_url}"]
       zuul_clone_cmd += ['git://git.openstack.org', "#{repo}"]
       sh(*zuul_clone_cmd)
     else
@@ -69,9 +65,7 @@ task :spec_prep do
     end
     script = ['env']
     script += ["PUPPETFILE_DIR=#{Dir.pwd}/spec/fixtures/modules"]
-    script += ["ZUUL_REF=#{zuul_ref}"]
     script += ["ZUUL_BRANCH=#{zuul_branch}"]
-    script += ["ZUUL_URL=#{zuul_url}"]
     script += ['bash', "#{repo}/install_modules_unit.sh"]
     sh(*script)
   end
