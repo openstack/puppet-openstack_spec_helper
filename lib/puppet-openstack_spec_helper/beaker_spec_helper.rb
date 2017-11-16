@@ -30,7 +30,7 @@ RSpec.configure do |c|
       # install git
       install_package host, 'git'
 
-      zuul_branch = ENV['ZUUL_BRANCH']
+      zuul_branch = ENV['ZUUL_BRANCH_REAL'] || ENV['ZUUL_BRANCH']
       puppet_maj_version = ENV['PUPPET_MAJ_VERSION']
 
       repo = 'openstack/puppet-openstack-integration'
