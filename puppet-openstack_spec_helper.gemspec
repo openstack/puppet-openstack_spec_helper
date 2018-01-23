@@ -28,9 +28,12 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'puppet-lint-unquoted_string-check'
   spec.add_dependency 'puppet-lint-leading_zero-check'
   spec.add_dependency 'json'
-  spec.add_dependency 'netaddr'
   spec.add_dependency 'webmock'
   spec.add_dependency 'etcdv3'
+
+  # Force Netaddr 1.x as 2.x is not compatible
+  # https://github.com/dspinhirne/netaddr-rb/issues/5
+  spec.add_dependency 'netaddr', ['< 2.0.0']
 
   # Things that get pinned because we can't have nice things (new ruby > 2.0)
   spec.add_dependency 'fast_gettext', ['< 1.2.0']
