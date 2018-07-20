@@ -33,3 +33,6 @@ Instructions for using `puppet-openstack_spec_helper/beaker_spec_helper` in
 
 Release notes for the project can be found at:
   https://docs.openstack.org/releasenotes/puppet-openstack_spec_helper
+
+The project source code repository is located at:
+  https://git.openstack.org/cgit/openstack/puppet-openstack_spec_helper
