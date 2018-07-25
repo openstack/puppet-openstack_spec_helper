@@ -31,6 +31,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webmock'
   spec.add_dependency 'etcdv3'
 
+  # Force net-telnet 0.1.1 as 0.2.0 requires ruby >= 2.3.0 which
+  # CentOS does not provide.
+  spec.add_dependency 'net-telnet', ['= 0.1.1']
+
   # Force Netaddr 1.x as 2.x is not compatible
   # https://github.com/dspinhirne/netaddr-rb/issues/5
   spec.add_dependency 'netaddr', ['< 2.0.0']
