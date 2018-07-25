@@ -29,7 +29,16 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'puppet-lint-leading_zero-check'
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
-  spec.add_dependency 'etcdv3'
+  # TODO(tobasco): We are not using etcdv3 yet in openstacklib like was described
+  # when this dependency was introduced but it's blocking ruby 2.5.0 support because
+  # this gem depends on an old grpc version which does not support ruby 2.5.0
+  # Ubuntu Bionic ships with ruby 2.5.0 which is causing the beaker tests to fail.
+  # Issue is opened on the etcdv3 gem here https://github.com/davissp14/etcdv3-ruby/issues/120
+  #spec.add_dependency 'etcdv3'
+
+  # Force net-telnet 0.1.1 as 0.2.0 requires ruby >= 2.3.0 which
+  # CentOS does not provide.
+  spec.add_dependency 'net-telnet', ['= 0.1.1']
 
   # Force Netaddr 1.x as 2.x is not compatible
   # https://github.com/dspinhirne/netaddr-rb/issues/5
