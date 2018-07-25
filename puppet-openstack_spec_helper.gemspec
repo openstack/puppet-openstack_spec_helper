@@ -29,12 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'puppet-lint-leading_zero-check'
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
-  # TODO(tobasco): We are not using etcdv3 yet in openstacklib like was described
-  # when this dependency was introduced but it's blocking ruby 2.5.0 support because
-  # this gem depends on an old grpc version which does not support ruby 2.5.0
-  # Ubuntu Bionic ships with ruby 2.5.0 which is causing the beaker tests to fail.
-  # Issue is opened on the etcdv3 gem here https://github.com/davissp14/etcdv3-ruby/issues/120
-  #spec.add_dependency 'etcdv3'
+  spec.add_dependency 'etcdv3'
 
   # Force net-telnet 0.1.1 as 0.2.0 requires ruby >= 2.3.0 which
   # CentOS does not provide.
@@ -46,8 +41,8 @@ Gem::Specification.new do |spec|
 
   # Things that get pinned because we can't have nice things (new ruby > 2.0)
   spec.add_dependency 'fast_gettext', ['< 1.2.0']
+  spec.add_dependency 'jwt', ['= 1.5.6']
   spec.add_dependency 'nokogiri', ['< 1.7.0']
-  spec.add_dependency 'grpc', ['1.7.0']
   # fog-core 1.44.0 requires xmlrpc 0.3.0 which requires ruby 2.3.0 which is not available on centos7
   spec.add_dependency 'fog-core', ['!= 1.44.0']
 
