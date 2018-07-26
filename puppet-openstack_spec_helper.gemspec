@@ -46,13 +46,10 @@ Gem::Specification.new do |spec|
   # fog-core 1.44.0 requires xmlrpc 0.3.0 which requires ruby 2.3.0 which is not available on centos7
   spec.add_dependency 'fog-core', ['!= 1.44.0']
 
-  # Beaker 3.0.0 fails to run in Puppet Openstack CI
-  # LoadError: cannot load such file -- serverspec
-  # While we're investigating it, let's pin Beaker to 2.x releases.
-  spec.add_dependency 'beaker', ['< 3.0.0']
-
   # dependencies that are needed to run beaker-rspec
-  spec.add_dependency 'beaker-rspec'
+  beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
+  spec.add_dependency 'beaker-rspec', beaker_rspec_version
+  spec.add_dependency 'beaker-puppet'
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
   spec.add_dependency 'r10k'
