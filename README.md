@@ -36,3 +36,6 @@ Release notes for the project can be found at:
 
 The project source code repository is located at:
   https://git.openstack.org/cgit/openstack/puppet-openstack_spec_helper
+
+Contributors for the project can be found at:
+  https://github.com/openstack/puppet-openstack_spec_helper/graphs/contributors
