@@ -49,7 +49,9 @@ Gem::Specification.new do |spec|
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
   spec.add_dependency 'beaker-rspec', beaker_rspec_version
-  spec.add_dependency 'beaker-puppet'
+  # Pin beaker-puppet to 0.17.1 because 1.0.0 does not work with our older
+  # beaker and beaker-puppet requirements.
+  spec.add_dependency 'beaker-puppet', ['= 0.17.1']
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
   spec.add_dependency 'r10k'
