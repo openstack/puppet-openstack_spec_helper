@@ -14,9 +14,9 @@ module OSDefaults
       { 'operatingsystem'        => 'CentOS',
         'operatingsystemrelease' => [ '7' ] },
       { 'operatingsystem'        => 'Ubuntu',
-        'operatingsystemrelease' => [ '16.04' ] },
+        'operatingsystemrelease' => [ '18.04' ] },
       { 'operatingsystem'        => 'Debian',
-        'operatingsystemrelease' => [ '8' ] }
+        'operatingsystemrelease' => [ '9' ] }
     ]
   end
 end
