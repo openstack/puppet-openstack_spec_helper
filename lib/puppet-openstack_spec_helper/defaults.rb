@@ -9,14 +9,19 @@ module OSDefaults
     }.merge(extra_facts)
   end
 
+  # TODO(tobias-urdin): We cannot update Ubuntu to 18.04 and Debian to 9 here
+  # because the facts in FacterDB https://github.com/camptocamp/facterdb is not
+  # added for all the facter versions we might run. This broke unit testing when
+  # we changed. Anybody feel free to push facts to FacterDB for all missing facter
+  # versions for Ubuntu 18.04 and Debian 9 that we might need.
   def self.get_supported_os
     [
       { 'operatingsystem'        => 'CentOS',
         'operatingsystemrelease' => [ '7' ] },
       { 'operatingsystem'        => 'Ubuntu',
-        'operatingsystemrelease' => [ '18.04' ] },
+        'operatingsystemrelease' => [ '16.04' ] },
       { 'operatingsystem'        => 'Debian',
-        'operatingsystemrelease' => [ '9' ] }
+        'operatingsystemrelease' => [ '8' ] }
     ]
   end
 end
