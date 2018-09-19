@@ -20,6 +20,10 @@ Gem::Specification.new do |spec|
   # NOTE(mwhahaha): pinning to 2.3.0 as 2.3.1 just fails siliently
   spec.add_dependency 'puppet-lint', ['2.3.0']
   spec.add_dependency 'puppetlabs_spec_helper'
+
+  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['~> 5.5']
+  spec.add_dependency 'puppet', puppetversion
+
   spec.add_dependency 'rspec-puppet', ['~> 2.3.0']
   spec.add_dependency 'rspec-puppet-facts', ['>= 1.7.0']
   spec.add_dependency 'metadata-json-lint'
