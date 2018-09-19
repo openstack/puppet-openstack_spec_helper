@@ -20,6 +20,10 @@ Gem::Specification.new do |spec|
   # NOTE(mwhahaha): pinning to 2.3.0 as 2.3.1 just fails siliently
   spec.add_dependency 'puppet-lint', ['2.3.0']
   spec.add_dependency 'puppetlabs_spec_helper'
+
+  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['~> 5.5']
+  spec.add_dependency 'puppet', puppetversion
+
   spec.add_dependency 'rspec-puppet', ['~> 2.2.0']
   spec.add_dependency 'rspec-puppet-facts', ['>= 1.7.0']
   spec.add_dependency 'metadata-json-lint'
@@ -55,5 +59,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'beaker-rspec'
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
-  spec.add_dependency 'r10k'
+
+  # NOTE(tobias-urdin): Pin r10k and cri gems since r10k 3.0.0
+  # requires a cri version that must have ruby >= 2.3.0
+  spec.add_dependency 'r10k', ['~> 2.6']
+  spec.add_dependency 'cri', ['~> 2.6']
 end
