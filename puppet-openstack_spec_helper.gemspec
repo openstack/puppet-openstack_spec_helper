@@ -59,5 +59,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'beaker-rspec'
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
-  spec.add_dependency 'r10k'
+
+  # NOTE(tobias-urdin): Pin r10k and cri gems since r10k 3.0.0
+  # requires a cri version that must have ruby >= 2.3.0
+  spec.add_dependency 'r10k', ['~> 2.6']
+  spec.add_dependency 'cri', ['~> 2.6']
 end
