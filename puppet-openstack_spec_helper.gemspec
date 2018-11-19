@@ -23,7 +23,12 @@ Gem::Specification.new do |spec|
   puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['~> 5.5']
   spec.add_dependency 'puppet', puppetversion
 
-  spec.add_dependency 'rspec-puppet', ['~> 2.3.0']
+  # TODO(tobias-urdin): We need to bump this to 2.7.1 soon which will cause strict checking
+  # of variables. This will break *a lot* of stuff because we are not properly including
+  # classes in pre_condition in many places which causes undefined variables.
+  rspec_puppet_version = ENV.key?('RSPEC_PUPPET_VERSION') ? ENV['RSPEC_PUPPET_VERSION'] : ['~> 2.3.0']
+  spec.add_dependency 'rspec-puppet', rspec_puppet_version
+
   spec.add_dependency 'rspec-puppet-facts', ['>= 1.7.0']
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'puppet-lint-param-docs'
