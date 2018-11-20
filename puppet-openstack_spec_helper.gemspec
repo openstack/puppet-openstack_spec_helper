@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'puppet-lint', ['2.3.6']
   spec.add_dependency 'puppetlabs_spec_helper'
 
-  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['~> 5.5']
+  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 5.5']
   spec.add_dependency 'puppet', puppetversion
 
   # TODO(tobias-urdin): We need to bump this to 2.7.1 soon which will cause strict checking
