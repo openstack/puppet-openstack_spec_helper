@@ -24,6 +24,12 @@ install_gems() {
   sed -i "/.*branch[[:space:]]*=> 'stable\/.*/d" Gemfile
 
   # Install dependencies
-  gem install bundler --no-rdoc --no-ri --verbose
+  ruby <<EOF
+cmd = 'gem install bundler --no-rdoc --no-ri --verbose'
+if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.3.0') then
+  cmd += ' -v 1.17.3'
+end
+system(cmd)
+EOF
   $GEM_HOME/bin/bundle install
 }
