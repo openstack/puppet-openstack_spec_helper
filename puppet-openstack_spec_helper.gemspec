@@ -35,6 +35,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webmock'
   spec.add_dependency 'etcdv3'
 
+  # grpc 1.18 requires ruby >= 2.2
+  grpc_rspec_version = RUBY_VERSION < '2.3.0' ? '~> 0.9': '~> 1.0'
+  spec.add_dependency 'grpc', grpc_rspec_version
+
   # Force net-telnet 0.1.1 as 0.2.0 requires ruby >= 2.3.0 which
   # CentOS does not provide.
   spec.add_dependency 'net-telnet', ['= 0.1.1']
