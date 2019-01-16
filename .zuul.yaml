@@ -2,3 +2,11 @@
     templates:
       - puppet-openstack-library-jobs
       - release-notes-jobs-python3
+    check:
+      jobs:
+        - puppet-openstack-libraries-puppet-beaker-rspec-ubuntu-bionic:
+            voting: false
+    gate:
+      jobs:
+        - puppet-openstack-libraries-puppet-beaker-rspec-ubuntu-bionic:
+            voting: false
