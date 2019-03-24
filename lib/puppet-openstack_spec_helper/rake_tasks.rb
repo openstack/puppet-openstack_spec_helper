@@ -53,7 +53,7 @@ task :spec_prep do
       zuul_clone_cmd = ['/usr/zuul-env/bin/zuul-cloner']
       zuul_clone_cmd += ['--cache-dir', '/opt/git']
       zuul_clone_cmd += ['--zuul-branch', "#{zuul_branch}"]
-      zuul_clone_cmd += ['git://git.openstack.org', "#{repo}"]
+      zuul_clone_cmd += ['https://git.openstack.org', "#{repo}"]
       sh(*zuul_clone_cmd)
     else
       sh("git clone https://git.openstack.org/#{repo} -b stable/queens #{repo}")
