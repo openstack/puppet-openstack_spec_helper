@@ -1,5 +1,5 @@
 module PuppetOpenstackSpecHelper
   module Version
-    STRING = '14.0.0'
+    STRING = '15.0.0'
   end
 end
