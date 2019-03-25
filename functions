@@ -12,7 +12,7 @@ install_gems() {
       /usr/zuul-env/bin/zuul-cloner --cache-dir /opt/git \
           https://git.openstack.org openstack/puppet-nova
   else
-      git clone https://git.openstack.org/openstack/puppet-nova openstack/puppet-nova
+      git clone https://git.openstack.org/openstack/puppet-nova -b stable/stein openstack/puppet-nova
   fi
   cd openstack/puppet-nova
 
