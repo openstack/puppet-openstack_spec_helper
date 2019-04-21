@@ -43,10 +43,10 @@ RSpec.configure do |c|
         zuul_clone_cmd = '/usr/zuul-env/bin/zuul-cloner '
         zuul_clone_cmd += '--cache-dir /opt/git '
         zuul_clone_cmd += "--zuul-branch #{zuul_branch} "
-        zuul_clone_cmd += "https://git.openstack.org #{repo}"
+        zuul_clone_cmd += "https://opendev.org #{repo}"
         on host, zuul_clone_cmd
       else
-        on host, "git clone https://git.openstack.org/#{repo} #{repo}"
+        on host, "git clone https://opendev.org/#{repo} #{repo}"
       end
 
       on host, "ZUUL_BRANCH=#{zuul_branch} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"

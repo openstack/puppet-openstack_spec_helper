@@ -54,10 +54,10 @@ task :spec_prep do
       zuul_clone_cmd = ['/usr/zuul-env/bin/zuul-cloner']
       zuul_clone_cmd += ['--cache-dir', '/opt/git']
       zuul_clone_cmd += ['--zuul-branch', "#{zuul_branch}"]
-      zuul_clone_cmd += ['https://git.openstack.org', "#{repo}"]
+      zuul_clone_cmd += ['https://opendev.org', "#{repo}"]
       sh(*zuul_clone_cmd)
     else
-      sh("git clone https://git.openstack.org/#{repo} #{repo}")
+      sh("git clone https://opendev.org/#{repo} #{repo}")
     end
     # Allow to a repository to have extra modules that are not
     # in puppet-openstack-integration

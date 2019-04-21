@@ -10,9 +10,9 @@ install_gems() {
   # use puppet-nova to test the gem
   if [ -e /usr/zuul-env/bin/zuul-cloner ] ; then
       /usr/zuul-env/bin/zuul-cloner --cache-dir /opt/git \
-          https://git.openstack.org openstack/puppet-nova
+          https://opendev.org openstack/puppet-nova
   else
-      git clone https://git.openstack.org/openstack/puppet-nova openstack/puppet-nova
+      git clone https://opendev.org/openstack/puppet-nova openstack/puppet-nova
   fi
   cd openstack/puppet-nova
 
