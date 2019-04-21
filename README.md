@@ -18,7 +18,7 @@ Include this gem in your Gemfile:
 
 ```
 gem 'puppet-openstack_spec_helper',
-  :git => 'https://git.openstack.org/openstack/puppet-openstack_spec_helper',
+  :git => 'https://opendev.org/openstack/puppet-openstack_spec_helper',
   :require => false
 ```
 
@@ -35,7 +35,7 @@ Release notes for the project can be found at:
   https://docs.openstack.org/releasenotes/puppet-openstack_spec_helper
 
 The project source code repository is located at:
-  https://git.openstack.org/cgit/openstack/puppet-openstack_spec_helper
+  https://opendev.org/openstack/puppet-openstack_spec_helper
 
 Contributors for the project can be found at:
   https://github.com/openstack/puppet-openstack_spec_helper/graphs/contributors
