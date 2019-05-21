@@ -13,6 +13,8 @@ PuppetSyntax.exclude_paths << "pkg/**/*"
 PuppetSyntax.exclude_paths << "vendor/**/*"
 PuppetSyntax.fail_on_deprecation_notices = false
 
+MetadataJsonLint.options.strict_dependencies = true
+
 Rake::Task[:lint].clear
 PuppetLint::RakeTask.new :lint do |config|
   config.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
