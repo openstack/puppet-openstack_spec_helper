@@ -8,9 +8,9 @@ install_gems() {
   export GEM_HOME=`pwd`/.bundled_gems
 
   # use puppet-nova to test the gem
-  if [ -e /usr/zuul-env/bin/zuul-cloner ] ; then
-      /usr/zuul-env/bin/zuul-cloner --cache-dir /opt/git \
-          https://git.openstack.org openstack/puppet-nova
+  if [ -d /home/zuul/src/opendev.org/openstack/puppet-nova ]; then
+      [ ! -d openstack ] && mkdir openstack
+      cp -R /home/zuul/src/opendev.org/openstack/puppet-nova openstack/puppet-nova
   else
       git clone https://git.openstack.org/openstack/puppet-nova -b stable/rocky openstack/puppet-nova
   fi
