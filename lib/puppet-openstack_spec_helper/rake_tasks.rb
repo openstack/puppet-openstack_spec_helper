@@ -50,12 +50,9 @@ task :spec_prep do
     zuul_branch = ENV['ZUUL_BRANCH']
     repo = 'openstack/puppet-openstack-integration'
     rm_rf(repo)
-    if File.exists?('/usr/zuul-env/bin/zuul-cloner')
-      zuul_clone_cmd = ['/usr/zuul-env/bin/zuul-cloner']
-      zuul_clone_cmd += ['--cache-dir', '/opt/git']
-      zuul_clone_cmd += ['--zuul-branch', "#{zuul_branch}"]
-      zuul_clone_cmd += ['https://git.openstack.org', "#{repo}"]
-      sh(*zuul_clone_cmd)
+    if File.directory?("/home/zuul/src/opendev.org/#{repo}")
+      sh("mkdir openstack || true")
+      sh("cp -R /home/zuul/src/opendev.org/#{repo} #{repo}")
     else
       sh("git clone https://git.openstack.org/#{repo} -b stable/stein #{repo}")
     end

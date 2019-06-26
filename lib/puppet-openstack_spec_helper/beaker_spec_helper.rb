@@ -38,13 +38,10 @@ RSpec.configure do |c|
       # Start out with clean moduledir, don't trust r10k to purge it
       on host, "rm -rf /etc/puppet/modules/*"
       # Install dependent modules via git or zuul
-      r = on host, "test -e /usr/zuul-env/bin/zuul-cloner", { :acceptable_exit_codes => [0,1] }
+      r = on host, "test -d /home/zuul/src/opendev.org/#{repo}", { :acceptable_exit_codes => [0,1] }
       if r.exit_code == 0
-        zuul_clone_cmd = '/usr/zuul-env/bin/zuul-cloner '
-        zuul_clone_cmd += '--cache-dir /opt/git '
-        zuul_clone_cmd += "--zuul-branch #{zuul_branch} "
-        zuul_clone_cmd += "https://git.openstack.org #{repo}"
-        on host, zuul_clone_cmd
+        on host, "mkdir openstack || true"
+        on host, "cp -R /home/zuul/src/opendev.org/#{repo} #{repo}"
       else
         on host, "git clone https://git.openstack.org/#{repo} -b stable/stein #{repo}"
       end
