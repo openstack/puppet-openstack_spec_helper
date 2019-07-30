@@ -2,11 +2,3 @@
     templates:
       - puppet-openstack-library-jobs
       - release-notes-jobs
-    check:
-      jobs:
-        - puppet-openstack-libraries-puppet-beaker-rspec-centos-7:
-            voting: false
-    gate:
-      jobs:
-        - puppet-openstack-libraries-puppet-beaker-rspec-centos-7:
-            voting: false
