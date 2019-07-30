@@ -31,7 +31,9 @@ Gem::Specification.new do |spec|
   rspec_puppet_version = ENV.key?('RSPEC_PUPPET_VERSION') ? ENV['RSPEC_PUPPET_VERSION'] : ['~> 2.3.0']
   spec.add_dependency 'rspec-puppet', rspec_puppet_version
 
-  spec.add_dependency 'rspec-puppet-facts', ['>= 1.7.0']
+  # TODO(aschultz): 1.9.5 requires ruby >= 2.1.0 which breaks on centos7
+  rspec_puppet_facts_version = RUBY_VERSION < '2.1.0' ? ['>= 1.7.0', '< 1.9.5'] : ['>= 1.7.0']
+  spec.add_dependency 'rspec-puppet-facts', rspec_puppet_facts_version
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'puppet-lint-param-docs'
   spec.add_dependency 'puppet-lint-absolute_classname-check'
