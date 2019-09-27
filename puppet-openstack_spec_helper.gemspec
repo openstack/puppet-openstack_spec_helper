@@ -19,6 +19,9 @@ Gem::Specification.new do |spec|
   # dependencies that are needed to run puppet-lint and rspec-puppet
   spec.add_dependency 'puppet-lint', ['2.3.6']
   spec.add_dependency 'puppetlabs_spec_helper'
+  # NOTE(mwhahaha): rake 13.0.0 requires ruby > 2.1.0
+  rake_version = RUBY_VERSION < '2.1.0' ? ['< 13.0.0'] : ['>= 13.0.0']
+  spec.add_dependency 'rake', rake_version
 
   # TODO(tobias-urdin): Remove <= 6.4.2 cap when 6.6.0 is released because of this bug in 6.5.0
   # https://tickets.puppetlabs.com/browse/PUP-9794
