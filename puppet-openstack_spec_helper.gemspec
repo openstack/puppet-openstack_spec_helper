@@ -22,6 +22,9 @@ Gem::Specification.new do |spec|
   # NOTE(mwhahaha): rake 13.0.0 requires ruby > 2.1.0
   rake_version = RUBY_VERSION < '2.1.0' ? ['< 13.0.0'] : ['>= 13.0.0']
   spec.add_dependency 'rake', rake_version
+  # NOTE(tkajinam): minitest 5.12.1 requires ruby > 2.3
+  minitest_version = RUBY_VERSION < '2.3.0' ? ['< 5.12.1'] : ['>= 5.12.1']
+  spec.add_dependency 'minitest', minitest_version
 
   # TODO(tobias-urdin): Remove <= 6.4.2 cap when 6.6.0 is released because of this bug in 6.5.0
   # https://tickets.puppetlabs.com/browse/PUP-9794
