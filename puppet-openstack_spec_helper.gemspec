@@ -20,6 +20,12 @@ Gem::Specification.new do |spec|
   # NOTE(mwhahaha): pinning to 2.3.0 as 2.3.1 just fails siliently
   spec.add_dependency 'puppet-lint', ['2.3.0']
   spec.add_dependency 'puppetlabs_spec_helper'
+  # NOTE(mwhahaha): rake 13.0.0 requires ruby > 2.1.0
+  rake_version = RUBY_VERSION < '2.1.0' ? ['< 13.0.0'] : ['>= 13.0.0']
+  spec.add_dependency 'rake', rake_version
+  # NOTE(tkajinam): minitest 5.12.1 requires ruby > 2.3
+  minitest_version = RUBY_VERSION < '2.3.0' ? ['< 5.12.1'] : ['>= 5.12.1']
+  spec.add_dependency 'minitest', minitest_version
 
   puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['~> 5.5']
   spec.add_dependency 'puppet', puppetversion
