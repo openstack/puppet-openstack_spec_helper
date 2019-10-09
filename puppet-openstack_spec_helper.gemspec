@@ -75,6 +75,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
 
+  # NOTE(tobias-urdin): Pin signet to 0.11.0 as 0.12.0 requires ruby >= 2.4.0
+  signet_version = RUBY_VERSION < '2.4.0' ? '~> 0.11' : '>= 0.11.0'
+  spec.add_dependency 'signet', signet_version
+
   # NOTE(tobias-urdin): Pin r10k and cri gems since r10k 3.0.0
   # requires a cri version that must have ruby >= 2.3.0
   spec.add_dependency 'r10k', ['~> 2.6']
