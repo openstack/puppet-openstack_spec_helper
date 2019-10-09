@@ -43,7 +43,7 @@ RSpec.configure do |c|
         on host, "mkdir openstack || true"
         on host, "cp -R /home/zuul/src/opendev.org/#{repo} #{repo}"
       else
-        on host, "git clone https://opendev.org/#{repo} #{repo}"
+        on host, "git clone https://opendev.org/#{repo} -b stable/train #{repo}"
       end
 
       on host, "ZUUL_BRANCH=#{zuul_branch} PUPPET_MAJ_VERSION=#{puppet_maj_version} bash #{repo}/install_modules.sh"
