@@ -61,6 +61,10 @@ Gem::Specification.new do |spec|
   # fog-core 1.44.0 requires xmlrpc 0.3.0 which requires ruby 2.3.0 which is not available on centos7
   spec.add_dependency 'fog-core', ['!= 1.44.0']
 
+  # NOTE(tobias-urdin): Pin signet to 0.11.0 as 0.12.0 requires ruby >= 2.4.0
+  signet_version = RUBY_VERSION < '2.4.0' ? '~> 0.11.0' : '>= 0.11.0'
+  spec.add_dependency 'signet', signet_version
+
   # Beaker 3.0.0 fails to run in Puppet Openstack CI
   # LoadError: cannot load such file -- serverspec
   # While we're investigating it, let's pin Beaker to 2.x releases.
