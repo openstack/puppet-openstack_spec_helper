@@ -26,9 +26,7 @@ Gem::Specification.new do |spec|
   minitest_version = RUBY_VERSION < '2.3.0' ? ['< 5.12.1'] : ['>= 5.12.1']
   spec.add_dependency 'minitest', minitest_version
 
-  # TODO(tobias-urdin): Remove <= 6.4.2 cap when 6.6.0 is released because of this bug in 6.5.0
-  # https://tickets.puppetlabs.com/browse/PUP-9794
-  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 5.5', '<= 6.4.2']
+  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 5.5']
   spec.add_dependency 'puppet', puppetversion
 
   # TODO(tobias-urdin): We need to bump this to 2.7.1 soon which will cause strict checking
