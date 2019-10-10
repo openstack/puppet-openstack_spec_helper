@@ -66,6 +66,10 @@ Gem::Specification.new do |spec|
   # fog-core 1.44.0 requires xmlrpc 0.3.0 which requires ruby 2.3.0 which is not available on centos7
   spec.add_dependency 'fog-core', ['!= 1.44.0']
 
+  # NOTE(tobias-urdin): Pin signet to 0.11.0 as 0.12.0 requires ruby >= 2.4.0
+  signet_version = RUBY_VERSION < '2.4.0' ? '~> 0.11.0' : '>= 0.11.0'
+  spec.add_dependency 'signet', signet_version
+
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
   spec.add_dependency 'beaker-rspec', beaker_rspec_version
@@ -74,10 +78,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'beaker-puppet', ['= 0.17.1']
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
-
-  # NOTE(tobias-urdin): Pin signet to 0.11.0 as 0.12.0 requires ruby >= 2.4.0
-  signet_version = RUBY_VERSION < '2.4.0' ? '~> 0.11' : '>= 0.11.0'
-  spec.add_dependency 'signet', signet_version
 
   # NOTE(tobias-urdin): Pin r10k and cri gems since r10k 3.0.0
   # requires a cri version that must have ruby >= 2.3.0
