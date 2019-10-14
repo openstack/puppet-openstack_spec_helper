@@ -70,6 +70,10 @@ Gem::Specification.new do |spec|
   signet_version = RUBY_VERSION < '2.4.0' ? '~> 0.11.0' : '>= 0.11.0'
   spec.add_dependency 'signet', signet_version
 
+  # NOTE(zhongshengping): Pin dry-inflector to 0.1.2 as 0.2.0 requires ruby >= 2.4.0
+  dry_inflector_version = RUBY_VERSION < '2.4.0' ? '~> 0.1.2' : '>= 0.1.2'
+  spec.add_dependency 'dry-inflector', dry_inflector_version
+
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
   spec.add_dependency 'beaker-rspec', beaker_rspec_version
