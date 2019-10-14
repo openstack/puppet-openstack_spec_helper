@@ -65,6 +65,10 @@ Gem::Specification.new do |spec|
   signet_version = RUBY_VERSION < '2.4.0' ? '~> 0.11.0' : '>= 0.11.0'
   spec.add_dependency 'signet', signet_version
 
+  # NOTE(zhongshengping): Pin dry-inflector to 0.1.2 as 0.2.0 requires ruby >= 2.4.0
+  dry_inflector_version = RUBY_VERSION < '2.4.0' ? '~> 0.1.2' : '>= 0.1.2'
+  spec.add_dependency 'dry-inflector', dry_inflector_version
+
   # Beaker 3.0.0 fails to run in Puppet Openstack CI
   # LoadError: cannot load such file -- serverspec
   # While we're investigating it, let's pin Beaker to 2.x releases.
