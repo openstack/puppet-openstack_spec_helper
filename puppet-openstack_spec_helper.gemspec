@@ -70,6 +70,10 @@ Gem::Specification.new do |spec|
   dry_inflector_version = RUBY_VERSION < '2.4.0' ? '~> 0.1.2' : '>= 0.1.2'
   spec.add_dependency 'dry-inflector', dry_inflector_version
 
+  # NOTE(zhongshengping): Pin oga to 2.15 as 3.0 requires ruby >= 2.4.0
+  oga_version = RUBY_VERSION < '2.4.0' ? '~> 2.15' : '>= 2.15'
+  spec.add_dependency 'oga', oga_version
+
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
   spec.add_dependency 'beaker-rspec', beaker_rspec_version
