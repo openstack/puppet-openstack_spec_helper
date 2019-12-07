@@ -18,7 +18,10 @@ PuppetLint::RakeTask.new :lint do |config|
   config.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
   config.fail_on_warnings = true
   config.log_format = '%{path}:%{line}:%{KIND}: %{message}'
-  config.disable_checks = ["80chars", "class_inherits_from_params_class", "only_variable_string"]
+  # TODO(tobias-urdin) Remove relative_classname_inclusion
+  # when we have fixed all the absolute includes to relative.
+  # https://github.com/voxpupuli/puppet-lint-absolute_classname-check#relative-class-name-inclusion
+  config.disable_checks = ["80chars", "class_inherits_from_params_class", "only_variable_string", "relative_classname_inclusion"]
 end
 
 desc "Run acceptance tests"
