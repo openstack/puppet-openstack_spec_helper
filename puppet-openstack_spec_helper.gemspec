@@ -41,10 +41,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'puppet-lint-param-docs'
 
-  # TODO(tobias-urdin): Use puppet-lint-absolute_classname-check >= 2.0.0 for Ruby version >= 2.1.0
-  # when we have fixed all the absolute includes to relative.
-  # https://github.com/voxpupuli/puppet-lint-absolute_classname-check#relative-class-name-inclusion
-  puppet_lint_absolute_classname_version = RUBY_VERSION < '2.1.0' ? ['~> 1.0.0'] : ['~> 1.0.0']
+  # NOTE(tobias-urdin): Use puppet-lint-absolute_classname-check >= 2.0.0 for Ruby version >= 2.1.0
+  puppet_lint_absolute_classname_version = RUBY_VERSION < '2.1.0' ? ['~> 1.0.0'] : ['>= 2.0.0']
   spec.add_dependency 'puppet-lint-absolute_classname-check', puppet_lint_absolute_classname_version
 
   spec.add_dependency 'puppet-lint-unquoted_string-check'
