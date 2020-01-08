@@ -65,6 +65,7 @@ Gem::Specification.new do |spec|
 
   # Things that get pinned because we can't have nice things (new ruby > 2.0)
   spec.add_dependency 'fast_gettext', ['< 1.2.0']
+  spec.add_dependency 'gettext', ['< 3.3.0']
   spec.add_dependency 'jwt', ['= 1.5.6']
   spec.add_dependency 'nokogiri', ['< 1.7.0']
   # fog-core 1.44.0 requires xmlrpc 0.3.0 which requires ruby 2.3.0 which is not available on centos7
