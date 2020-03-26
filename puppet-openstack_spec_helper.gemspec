@@ -49,7 +49,10 @@ Gem::Specification.new do |spec|
   puppet_lint_absolute_classname_version = RUBY_VERSION < '2.1.0' ? ['~> 1.0.0'] : ['~> 1.0.0']
   spec.add_dependency 'puppet-lint-absolute_classname-check', puppet_lint_absolute_classname_version
 
-  spec.add_dependency 'puppet-lint-unquoted_string-check'
+  # NOTE(tkajinam): puppet-lint-unquoted_string-check >= 2.0.0 requires ruby >= 2.4
+  puppet_lint_unquoted_string_check_version = RUBY_VERSION < '2.4.0' ? ['~> 1.0.0'] : ['>= 2.0.0']
+  spec.add_dependency 'puppet-lint-unquoted_string-check', puppet_lint_unquoted_string_check_version
+
   spec.add_dependency 'puppet-lint-leading_zero-check'
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
