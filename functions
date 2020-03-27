@@ -6,6 +6,7 @@
 install_gems() {
   mkdir .bundled_gems
   export GEM_HOME=`pwd`/.bundled_gems
+  export GEM_BIN_DIR=$GEM_HOME/bin
 
   # use puppet-nova to test the gem
   if [ -d /home/zuul/src/opendev.org/openstack/puppet-nova ]; then
@@ -25,7 +26,7 @@ install_gems() {
 
   # Install dependencies
   ruby <<EOF
-cmd = 'gem install bundler --no-rdoc --no-ri --verbose'
+cmd = 'gem install bundler --no-rdoc --no-ri --verbose --bindir=${GEM_BIN_DIR}'
 if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.3.0') then
   cmd += ' -v 1.17.3'
 end
