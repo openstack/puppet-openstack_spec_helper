@@ -17,7 +17,7 @@ module OSDefaults
   def self.get_supported_os
     [
       { 'operatingsystem'        => 'CentOS',
-        'operatingsystemrelease' => [ '7' ] },
+        'operatingsystemrelease' => [ '8' ] },
       { 'operatingsystem'        => 'Ubuntu',
         'operatingsystemrelease' => [ '16.04' ] },
       { 'operatingsystem'        => 'Debian',
