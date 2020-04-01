@@ -91,6 +91,16 @@ Gem::Specification.new do |spec|
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
   spec.add_dependency 'beaker-rspec', beaker_rspec_version
+
+  # NOTE(tobias-urdin): When beaker_rspec_version is = 6.2.3 it depends on
+  # beaker ~> 3.0 which resolves to 3.37.0 which depends on pry-byebug ~> 3.4.2
+  # resolving to 3.4.3 that depends on pry ~> 0.13.0 which it doesn't support
+  # so we should cap pry to 0.12.2 otherwise if beaker-rspec is 5.6.0 we
+  # pin to 0.10.4
+  # TODO(tobias-urdin): Evaulate/remove when we unpin beaker-rspec or beaker.
+  pry_version = beaker_rspec_version == '= 6.2.3' ? '= 0.12.2' : '= 0.10.4'
+  spec.add_dependency 'pry', pry_version
+
   # Pin beaker-puppet to 0.17.1 because 1.0.0 does not work with our older
   # beaker and beaker-puppet requirements.
   spec.add_dependency 'beaker-puppet', ['= 0.17.1']
