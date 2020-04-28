@@ -13,7 +13,7 @@ install_gems() {
       [ ! -d openstack ] && mkdir openstack
       cp -R /home/zuul/src/opendev.org/openstack/puppet-nova openstack/puppet-nova
   else
-      git clone https://opendev.org/openstack/puppet-nova openstack/puppet-nova
+      git clone https://opendev.org/openstack/puppet-nova -b stable/ussuri openstack/puppet-nova
   fi
   cd openstack/puppet-nova
 
