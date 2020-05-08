@@ -57,7 +57,7 @@ task :spec_prep do
       sh("mkdir openstack || true")
       sh("cp -R /home/zuul/src/opendev.org/#{repo} #{repo}")
     else
-      sh("git clone https://opendev.org/#{repo} #{repo}")
+      sh("git clone https://opendev.org/#{repo} -b stable/ussuri #{repo}")
     end
     # Allow to a repository to have extra modules that are not
     # in puppet-openstack-integration
