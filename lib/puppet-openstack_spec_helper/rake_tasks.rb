@@ -42,11 +42,10 @@ task :spec_prep do
     else
       gem_bin_dir = ''
     end
-    r10k = ['env']
-    r10k += ["PUPPETFILE=#{puppetfile}"]
-    r10k += ["PUPPETFILE_DIR=#{Dir.pwd}/spec/fixtures/modules"]
     r10k += ["#{gem_bin_dir}r10k"]
     r10k += ['-v', 'DEBUG', 'puppetfile', 'install']
+    r10k += ["--puppetfile", "#{puppetfile}"]
+    r10k += ["--moduledir", "#{Dir.pwd}/spec/fixtures/modules"]
     sh(*r10k)
   else
   # otherwise, use official OpenStack Puppetfile
