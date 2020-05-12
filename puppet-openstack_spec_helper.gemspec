@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   minitest_version = RUBY_VERSION < '2.3.0' ? ['< 5.12.1'] : ['>= 5.12.1']
   spec.add_dependency 'minitest', minitest_version
 
-  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 5.5']
+  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 6.0']
   spec.add_dependency 'puppet', puppetversion
 
   # TODO(tobias-urdin): We need to bump this to 2.7.1 soon which will cause strict checking
