@@ -54,4 +54,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'vagrant-wrapper'
 
   spec.add_dependency 'r10k', ['>= 3.0.0']
+
+  spec.add_dependency 'bolt', '= 1.49.0'
+  spec.add_dependency 'rubyzip', '= 1.3.0'
+  spec.add_dependency 'puppet_litmus'
 end
