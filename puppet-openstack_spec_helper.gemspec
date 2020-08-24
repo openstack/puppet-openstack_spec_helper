@@ -44,10 +44,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webmock'
   spec.add_dependency 'etcdv3'
 
-  # Force Netaddr 1.x as 2.x is not compatible
-  # https://github.com/dspinhirne/netaddr-rb/issues/5
-  spec.add_dependency 'netaddr', ['< 2.0.0']
-
   spec.add_dependency 'beaker-rspec'
   spec.add_dependency 'beaker-puppet'
   spec.add_dependency 'beaker-puppet_install_helper'
