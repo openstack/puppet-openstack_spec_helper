@@ -249,3 +249,4 @@ locale_dirs = ['locale/']
 
 # openstackdocstheme options
 openstackdocs_repo_name = 'openstack/puppet-openstack_spec_helper'
+openstackdocs_auto_name = False
