@@ -26,5 +26,5 @@ module OSDefaults
   end
 end
 
-# Make sure we include any helpers for spec (non beaker) tests.
+# Make sure we include any helpers for spec tests.
 Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each { |f| require f }

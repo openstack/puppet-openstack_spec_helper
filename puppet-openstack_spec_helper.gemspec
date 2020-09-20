@@ -44,13 +44,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webmock'
   spec.add_dependency 'etcdv3'
 
-  spec.add_dependency 'beaker-rspec'
-  spec.add_dependency 'beaker-puppet'
-  spec.add_dependency 'beaker-puppet_install_helper'
-  spec.add_dependency 'vagrant-wrapper'
-
   spec.add_dependency 'r10k', ['>= 3.0.0']
 
   spec.add_dependency 'bolt'
   spec.add_dependency 'puppet_litmus'
+  spec.add_dependency 'serverspec'
 end
