@@ -34,11 +34,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rspec-puppet-facts'
   spec.add_dependency 'rspec-puppet-utils'
 
-  spec.add_dependency 'metadata-json-lint'
-  spec.add_dependency 'puppet-lint-param-docs'
-  spec.add_dependency 'puppet-lint-unquoted_string-check'
-  spec.add_dependency 'puppet-lint-absolute_classname-check'
-  spec.add_dependency 'puppet-lint-leading_zero-check'
+  spec.add_dependency 'metadata-json-lint', ['= 2.4.0']
+  spec.add_dependency 'puppet-lint-param-docs', ['= 1.5.1']
+  spec.add_dependency 'puppet-lint-unquoted_string-check', ['= 2.0.0']
+  spec.add_dependency 'puppet-lint-absolute_classname-check', ['= 2.0.0']
+  spec.add_dependency 'puppet-lint-leading_zero-check', ['= 0.1.1']
 
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
