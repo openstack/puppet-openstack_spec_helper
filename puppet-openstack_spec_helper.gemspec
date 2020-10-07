@@ -39,7 +39,10 @@ Gem::Specification.new do |spec|
   rspec_puppet_facts_version = RUBY_VERSION < '2.1.0' ? ['>= 1.7.0', '< 1.9.5'] : ['>= 1.7.0']
   spec.add_dependency 'rspec-puppet-facts', rspec_puppet_facts_version
   spec.add_dependency 'metadata-json-lint'
-  spec.add_dependency 'puppet-lint-param-docs'
+
+  # NOTE(tkajinam): Use puppet-lint-param-docs 1.5.1 because stable branches are not compatible
+  #                 with new rules enforced in 1.6.0
+  spec.add_dependency 'puppet-lint-param-docs', ['= 1.5.1']
 
   # TODO(tobias-urdin): Use puppet-lint-absolute_classname-check >= 2.0.0 for Ruby version >= 2.1.0
   # when we have fixed all the absolute includes to relative.
