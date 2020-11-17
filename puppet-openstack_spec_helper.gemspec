@@ -103,6 +103,8 @@ Gem::Specification.new do |spec|
   # Pin beaker-puppet to 0.17.1 because 1.0.0 does not work with our older
   # beaker and beaker-puppet requirements.
   spec.add_dependency 'beaker-puppet', ['= 0.17.1']
+  # Pin breaker-hiera since 0.2.0 fails with the rest of our stuff.
+  spec.add_dependency 'beaker-hiera', ['= 0.1.1']
   spec.add_dependency 'beaker-puppet_install_helper'
   spec.add_dependency 'vagrant-wrapper'
 
