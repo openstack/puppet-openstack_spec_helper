@@ -47,7 +47,7 @@ task :spec_prep do
     sh(*r10k)
   else
   # otherwise, use official OpenStack Puppetfile
-    zuul_branch = ENV['ZUUL_BRANCH']
+    zuul_branch = ENV['ZUUL_BRANCH'] || 'master'
     repo = 'openstack/puppet-openstack-integration'
     rm_rf(repo)
     if File.directory?("/home/zuul/src/opendev.org/#{repo}")
