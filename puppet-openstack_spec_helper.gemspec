@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   # dependencies that are needed to run puppet-lint and rspec-puppet
   # NOTE(mwhahaha): pinning to 2.3.0 as 2.3.1 just fails siliently
   spec.add_dependency 'puppet-lint', ['2.3.0']
-  spec.add_dependency 'puppetlabs_spec_helper'
+  spec.add_dependency 'puppetlabs_spec_helper', ['< 3.0.0']
   # NOTE(mwhahaha): rake 13.0.0 requires ruby > 2.1.0
   rake_version = RUBY_VERSION < '2.1.0' ? ['< 13.0.0'] : ['>= 13.0.0']
   spec.add_dependency 'rake', rake_version
