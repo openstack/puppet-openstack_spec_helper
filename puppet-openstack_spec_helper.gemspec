@@ -59,6 +59,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'webmock'
   spec.add_dependency 'etcdv3'
 
+  # NOTE(tkajinam): pin rexml in CentOS7
+  rexml_version = RUBY_VERSION < '2.4.0' ? ['< 3.2.5'] :  ['>= 3.2.5']
+  spec.add_dependency 'rexml', rexml_version
+
   # grpc 1.18 requires ruby >= 2.2
   grpc_rspec_version = RUBY_VERSION < '2.3.0' ? '~> 0.9': '~> 1.0'
   spec.add_dependency 'grpc', grpc_rspec_version
