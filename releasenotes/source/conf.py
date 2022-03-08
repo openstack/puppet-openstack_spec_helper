@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-copyright = u'2016, Puppet OpenStack Developers'
+copyright = '2016, Puppet OpenStack Developers'
 
 # Release do not need a version number in the title, they
 # cover multiple versions.
@@ -183,8 +183,8 @@ htmlhelp_basename = 'puppet-openstack_spec_helperReleaseNotesdoc'
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'puppet-openstack_spec_helperReleaseNotes.tex', u'puppet-openstack_spec_helper Release Notes Documentation',
-   u'2016, Puppet OpenStack Developers', 'manual'),
+  ('index', 'puppet-openstack_spec_helperReleaseNotes.tex', 'puppet-openstack_spec_helper Release Notes Documentation',
+   '2016, Puppet OpenStack Developers', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -213,8 +213,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'puppet-openstack_spec_helperreleasenotes', u'puppet-openstack_spec_helper Release Notes Documentation',
-     [u'2016, Puppet OpenStack Developers'], 1)
+    ('index', 'puppet-openstack_spec_helperreleasenotes', 'puppet-openstack_spec_helper Release Notes Documentation',
+     ['2016, Puppet OpenStack Developers'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'puppet-openstack_spec_helperReleaseNotes', u'puppet-openstack_spec_helper Release Notes Documentation',
-   u'2016, Puppet OpenStack Developers', 'puppet-openstack_spec_helperReleaseNotes', 'One line description of project.',
+  ('index', 'puppet-openstack_spec_helperReleaseNotes', 'puppet-openstack_spec_helper Release Notes Documentation',
+   '2016, Puppet OpenStack Developers', 'puppet-openstack_spec_helperReleaseNotes', 'One line description of project.',
    'Miscellaneous'),
 ]
 
