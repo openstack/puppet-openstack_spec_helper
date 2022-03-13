@@ -3,9 +3,11 @@
 module OSDefaults
   def self.get_facts(extra_facts={})
     {
-      :os_service_default => '<SERVICE DEFAULT>',
-      :os_workers         => 2,
-      :puppetversion      => Puppet.version
+      :os_service_default     => '<SERVICE DEFAULT>',
+      :os_workers             => 2,
+      :os_workers_heat_engine => 2,
+      :os_workers_keystone    => 4,
+      :puppetversion          => Puppet.version
     }.merge(extra_facts)
   end
 
