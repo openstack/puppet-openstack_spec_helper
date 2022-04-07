@@ -46,8 +46,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'r10k', ['>= 3.0.0']
 
-  pathspec_version = RUBY_VERSION < '2.6.0' ? ['< 1.0.0'] :  ['>= 1.0.0']
-  spec.add_dependency 'pathspec', pathspec_version
+  if RUBY_VERSION < '2.6.0'
+    spec.add_dependency 'pathspec', ['< 1.0.0']
+  end
 
   spec.add_dependency 'bolt'
   spec.add_dependency 'puppet_litmus'
