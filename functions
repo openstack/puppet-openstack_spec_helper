@@ -30,5 +30,5 @@ cmd = 'gem install bundler --no-document --verbose --bindir=${GEM_BIN_DIR}'
 cmd += ' -v 2.2.11'
 system(cmd)
 EOF
-  $GEM_HOME/bin/bundle install
+  $GEM_HOME/bin/bundle install --without development,system_tests --retry 3
 }
