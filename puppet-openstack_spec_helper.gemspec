@@ -50,7 +50,13 @@ Gem::Specification.new do |spec|
     spec.add_dependency 'pathspec', ['< 1.0.0']
   end
 
-  spec.add_dependency 'bolt'
-  spec.add_dependency 'puppet_litmus'
+  # NOTE(tkajinam): The latest bolt does not support Ruby 3 yet. Disable litmus
+  #                 so that we can run unit tests in CentOS Stream 9 which has
+  #                 Ruby 3.
+  if RUBY_VERSION < '3.0.0'
+    spec.add_dependency 'bolt'
+    spec.add_dependency 'puppet_litmus', ['0.33.2']
+  end
+
   spec.add_dependency 'serverspec'
 end
