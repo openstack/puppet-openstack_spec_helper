@@ -3,11 +3,7 @@ require 'puppetlabs_spec_helper/rake_tasks'
 require 'puppet-lint/tasks/puppet-lint'
 require 'puppet-syntax/tasks/puppet-syntax'
 require 'metadata-json-lint/rake_task'
-begin
-  require 'puppet_litmus/rake_tasks'
-rescue LoadError
-  # In case puppet_litmus does not support the OS (eg. CentOS Stream 9)
-end
+require 'puppet_litmus/rake_tasks'
 require 'json'
 
 modname = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
