@@ -69,7 +69,8 @@ Gem::Specification.new do |spec|
 
   # Force net-telnet 0.1.1 as 0.2.0 requires ruby >= 2.3.0 which
   # CentOS does not provide.
-  spec.add_dependency 'net-telnet', ['= 0.1.1']
+  net_telnet_version = RUBY_VERSION < '2.3.0' ? ['=0.1.1']: ['>= 0.1.1']
+  spec.add_dependency 'net-telnet', net_telnet_version
 
   # Force Netaddr 1.x as 2.x is not compatible
   # https://github.com/dspinhirne/netaddr-rb/issues/5
@@ -94,6 +95,10 @@ Gem::Specification.new do |spec|
   # NOTE(zhongshengping): Pin oga to 2.15 as 3.0 requires ruby >= 2.4.0
   oga_version = RUBY_VERSION < '2.4.0' ? '~> 2.15' : '>= 2.15'
   spec.add_dependency 'oga', oga_version
+
+  # NOTE(tkajinam): Pin multipart-post to 2.1.0 as 2.2.0 requires ruby >= 2.3.0
+  multipart_post_version = RUBY_VERSION < '2.3.0' ? '~> 2.1.0' : '>= 2.1.0'
+  spec.add_dependency 'multipart-post', multipart_post_version
 
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'

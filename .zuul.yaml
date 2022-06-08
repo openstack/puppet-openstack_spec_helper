@@ -1,8 +1,13 @@
 - project:
     templates:
-      - puppet-openstack-library-jobs
+      # TODO(tkajinam): Revert this once we fix p-o-i
+      #- puppet-openstack-library-jobs
       - release-notes-jobs-python3
     check:
       jobs:
         - puppet-openstack-libraries-puppet-beaker-rspec-ubuntu-bionic:
             voting: false
+        - noop
+    gate:
+      jobs:
+        - noop
