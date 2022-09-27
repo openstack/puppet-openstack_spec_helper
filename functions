@@ -29,6 +29,8 @@ install_gems() {
 cmd = 'gem install bundler --no-document --verbose --bindir=${GEM_BIN_DIR}'
 if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.3.0') then
   cmd += ' -v 1.17.3'
+else
+  cmd += ' -v 2.2.11'
 end
 system(cmd)
 EOF

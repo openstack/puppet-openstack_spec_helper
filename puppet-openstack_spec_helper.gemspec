@@ -41,7 +41,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
-  spec.add_dependency 'etcdv3'
 
   # Force Netaddr 1.x as 2.x is not compatible
   # https://github.com/dspinhirne/netaddr-rb/issues/5
