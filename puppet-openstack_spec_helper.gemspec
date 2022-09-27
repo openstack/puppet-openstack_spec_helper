@@ -42,7 +42,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
-  spec.add_dependency 'etcdv3'
 
   spec.add_dependency 'r10k', ['>= 3.0.0']
 
