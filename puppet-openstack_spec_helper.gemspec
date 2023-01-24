@@ -22,6 +22,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rake'
   spec.add_dependency 'minitest'
 
+  # NOTE(tkajinam): concurrent-ruby 1.2.0 dropped RubyThreadLocalVar, which is
+  #                 still used by puppet as of 7.21.0.
+  spec.add_dependency 'concurrent-ruby', ['< 1.2.0']
+
   puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 5.5']
   spec.add_dependency 'puppet', puppetversion
 
