@@ -1,6 +1,4 @@
 - project:
     templates:
-      # TODO(tkajinam): Fix this
-      #- puppet-openstack-library-jobs
-      - noop-jobs
+      - puppet-openstack-library-jobs
       - release-notes-jobs-python3
