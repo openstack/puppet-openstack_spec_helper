@@ -7,7 +7,8 @@ module OSDefaults
       :os_workers             => 2,
       :os_workers_heat_engine => 2,
       :os_workers_keystone    => 4,
-      :puppetversion          => Puppet.version
+      :puppetversion          => Puppet.version,
+      :concat_basedir         =>  '/dne'
     }.merge(extra_facts)
   end
 
