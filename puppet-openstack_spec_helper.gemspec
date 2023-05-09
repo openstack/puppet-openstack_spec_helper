@@ -56,4 +56,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'vagrant-wrapper'
 
   spec.add_dependency 'r10k', ['>= 3.0.0']
+
+  # NOTE(tkajinam): public_suffix >= 5.0.0 requires ruby >= 2.6
+  public_suffix_version = RUBY_VERSION < '2.6.0' ? ['< 5.0.0'] :  ['>= 5.0.0']
+  spec.add_dependency 'public_suffix', public_suffix_version
 end
