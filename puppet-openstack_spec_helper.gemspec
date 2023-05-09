@@ -99,6 +99,10 @@ Gem::Specification.new do |spec|
   multipart_post_version = RUBY_VERSION < '2.3.0' ? '~> 2.1.0' : '>= 2.1.0'
   spec.add_dependency 'multipart-post', multipart_post_version
 
+  # NOTE(tkajinam): public_suffix >= 5.0.0 requires ruby >= 2.6
+  public_suffix_version = RUBY_VERSION < '2.6.0' ? ['< 5.0.0'] :  ['>= 5.0.0']
+  spec.add_dependency 'public_suffix', public_suffix_version
+
   # dependencies that are needed to run beaker-rspec
   beaker_rspec_version = RUBY_VERSION < '2.1.8' ? '= 5.6.0' : '= 6.2.3'
   spec.add_dependency 'beaker-rspec', beaker_rspec_version
