@@ -25,8 +25,12 @@ Gem::Specification.new do |spec|
   puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 6.0']
   spec.add_dependency 'puppet', puppetversion
 
-  rspec_puppet_version = ENV.key?('RSPEC_PUPPET_VERSION') ? ENV['RSPEC_PUPPET_VERSION'] : ['~> 2.10.0']
-  spec.add_dependency 'rspec-puppet', rspec_puppet_version
+  if ENV.key?('RSPEC_PUPPET_VERSION')
+    rspec_puppet_version = ENV['RSPEC_PUPPET_VERSION']
+    spec.add_dependency 'rspec-puppet', rspec_puppet_version
+  else
+    spec.add_dependency 'rspec-puppet'
+  end
 
   spec.add_dependency 'rspec-puppet-facts'
   spec.add_dependency 'rspec-puppet-utils'
