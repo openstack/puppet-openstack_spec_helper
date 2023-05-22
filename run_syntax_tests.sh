@@ -16,7 +16,7 @@
 export SCRIPT_DIR=$(cd `dirname $0` && pwd -P)
 source $SCRIPT_DIR/functions
 
-export PUPPET_VERSION=${PUPPET_VERSION:-6}
+export PUPPET_VERSION=${PUPPET_VERSION:-7}
 PUPPET_MAJOR_VERSION=`echo $PUPPET_VERSION | cut -c 1`
 export PUPPET_GEM_VERSION="~> $PUPPET_MAJOR_VERSION"
 

@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rake'
   spec.add_dependency 'minitest'
 
-  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 6.0']
+  puppetversion = ENV.key?('PUPPET_GEM_VERSION') ? ENV['PUPPET_GEM_VERSION'] : ['>= 7.0']
   spec.add_dependency 'puppet', puppetversion
 
   if ENV.key?('RSPEC_PUPPET_VERSION')
