@@ -19,7 +19,7 @@ module OSDefaults
       { 'operatingsystem'        => 'Ubuntu',
         'operatingsystemrelease' => [ '22.04' ] },
       { 'operatingsystem'        => 'Debian',
-        'operatingsystemrelease' => [ '11' ] }
+        'operatingsystemrelease' => [ '12' ] }
     ]
   end
 end
