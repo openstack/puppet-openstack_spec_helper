@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   # dependencies that are needed to run puppet-lint and rspec-puppet
   spec.add_dependency 'puppet-lint', ['2.3.6']
-  spec.add_dependency 'puppetlabs_spec_helper'
+  spec.add_dependency 'puppetlabs_spec_helper', ['<5.0.0']
   spec.add_dependency 'rake'
   spec.add_dependency 'minitest'
 
