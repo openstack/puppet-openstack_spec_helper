@@ -17,13 +17,6 @@ install_gems() {
   fi
   cd openstack/puppet-nova
 
-  # Modify Gemfile to use local library and not the one on git
-  # so we can actually test the current state of the gem.
-  sed -i -e "s|\('puppet-openstack_spec_helper',.*\) \(:git\).*|\1 :path => '../..'|g" Gemfile
-  # NOTE(aschultz): in order for this to work we need to nuke the branch line
-  # since we're replacing the repository with a path
-  sed -i "/.*(ref|branch)[[:space:]]*=> 'stable\/.*/d" Gemfile
-
   # Install dependencies
   ruby <<EOF
 cmd = 'gem install bundler --no-document --verbose --bindir=${GEM_BIN_DIR}'
