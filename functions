@@ -27,7 +27,7 @@ install_gems() {
   # Install dependencies
   ruby <<EOF
 cmd = 'gem install bundler --no-document --verbose --bindir=${GEM_BIN_DIR}'
-cmd += ' -v 2.2.11'
+cmd += ' -v 2.4.22'
 system(cmd)
 EOF
   $GEM_HOME/bin/bundle install --without development,system_tests --retry 3
