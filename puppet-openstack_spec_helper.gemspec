@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   rspec_puppet_version = ENV.key?('RSPEC_PUPPET_VERSION') ? ENV['RSPEC_PUPPET_VERSION'] : ['~> 2.10.0']
   spec.add_dependency 'rspec-puppet', rspec_puppet_version
 
-  spec.add_dependency 'rspec-puppet-facts'
+  spec.add_dependency 'rspec-puppet-facts', ['< 5.0.0']
   spec.add_dependency 'rspec-puppet-utils'
 
   spec.add_dependency 'metadata-json-lint'
