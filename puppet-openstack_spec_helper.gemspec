@@ -49,4 +49,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bolt'
   spec.add_dependency 'puppet_litmus'
   spec.add_dependency 'serverspec'
+
+  spec.add_dependency 'ruby-augeas'
 end
