@@ -17,7 +17,7 @@ module PuppetOpenstackSpecHelpers
         smoke_dir = File.join(project_root_directory, ex_dir)
         smoke_manifest_file = File.join(smoke_dir,
                                         file.sub(/\.pp$/, '') + '.pp')
-        break if File.exists?(smoke_manifest_file)
+        break if File.exist?(smoke_manifest_file)
         found = false
       end
       unless found

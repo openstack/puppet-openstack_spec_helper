@@ -63,7 +63,7 @@ task :spec_prep do
     end
     # Allow to a repository to have extra modules that are not
     # in puppet-openstack-integration
-    if File.exists?("#{Dir.pwd}/Puppetfile_extras")
+    if File.exist?("#{Dir.pwd}/Puppetfile_extras")
       sh("cat #{Dir.pwd}/Puppetfile_extras >> #{repo}/Puppetfile")
     end
     script = ['env']
