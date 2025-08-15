@@ -36,10 +36,13 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rspec-puppet-utils'
 
   spec.add_dependency 'metadata-json-lint'
-  spec.add_dependency 'puppet-lint-param-docs'
-  spec.add_dependency 'puppet-lint-unquoted_string-check'
   spec.add_dependency 'puppet-lint-absolute_classname-check'
+  spec.add_dependency 'puppet-lint-file_ensure-check'
   spec.add_dependency 'puppet-lint-leading_zero-check'
+  spec.add_dependency 'puppet-lint-param-docs'
+  spec.add_dependency 'puppet-lint-trailing_comma-check'
+  spec.add_dependency 'puppet-lint-unquoted_string-check'
+  spec.add_dependency 'puppet-lint-topscope-variable-check'
 
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
