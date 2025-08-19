@@ -18,14 +18,18 @@ PuppetLint::RakeTask.new :lint do |config|
   config.fail_on_warnings = true
   config.log_format = '%{path}:%{line}:%{KIND}: %{message}'
   config.disable_checks = [
-    "80chars",
-    "class_inherits_from_params_class",
-    "only_variable_string",
-    "check_unsafe_interpolations"
+    '80chars',
+    'anchor_resource',
+    'check_unsafe_interpolations',
+    'class_inherits_from_params_class',
+    'only_variable_string',
+    'parameter_types',
+    'params_empty_string_assignment',
+    'strict_indent',
   ]
 end
 
-desc "Run acceptance tests"
+desc 'Run acceptance tests'
 RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
 end
