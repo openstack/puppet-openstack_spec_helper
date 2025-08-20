@@ -6,8 +6,6 @@ require 'metadata-json-lint/rake_task'
 require 'puppet_litmus/rake_tasks'
 require 'json'
 
-modname = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
-
 PuppetSyntax.exclude_paths ||= []
 PuppetSyntax.exclude_paths << "spec/fixtures/**/*"
 PuppetSyntax.exclude_paths << "pkg/**/*"
@@ -35,6 +33,8 @@ end
 Rake::Task[:spec_prep].clear
 desc 'Create the fixtures directory'
 task :spec_prep do
+  modname = JSON.parse(open('metadata.json').read)['name'].split('-')[1]
+
   # Allow to test the module with custom dependencies
   # like you could do with .fixtures file
   if ENV['PUPPETFILE']
