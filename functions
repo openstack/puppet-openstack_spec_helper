@@ -18,10 +18,7 @@ install_gems() {
   cd openstack/puppet-nova
 
   # Install dependencies
-  ruby <<EOF
-cmd = 'gem install bundler --no-document --verbose --bindir=${GEM_BIN_DIR}'
-system(cmd)
-EOF
+  gem install bundler --no-document --verbose --bindir=${GEM_BIN_DIR}
   $GEM_HOME/bin/bundle config set --local without development,system_tests
   $GEM_HOME/bin/bundle install --retry 3
 }
