@@ -37,6 +37,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'metadata-json-lint'
   spec.add_dependency 'voxpupuli-puppet-lint-plugins', '~> 6.0'
+  spec.add_dependency 'puppet-lint-stdlib_deprecations'
 
   spec.add_dependency 'json'
   spec.add_dependency 'webmock'
