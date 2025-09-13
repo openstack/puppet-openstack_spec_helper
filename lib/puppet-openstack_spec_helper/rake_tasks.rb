@@ -11,6 +11,8 @@ PuppetSyntax.exclude_paths << "spec/fixtures/**/*"
 PuppetSyntax.exclude_paths << "pkg/**/*"
 PuppetSyntax.exclude_paths << "vendor/**/*"
 PuppetSyntax.fail_on_deprecation_notices = false
+PuppetSyntax.check_hiera_keys = true
+PuppetSyntax.check_hiera_data = true
 
 Rake::Task[:lint].clear
 PuppetLint::RakeTask.new :lint do |config|
