@@ -18,15 +18,20 @@ Rake::Task[:lint].clear
 PuppetLint::RakeTask.new :lint do |config|
   config.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
   config.fail_on_warnings = true
-  config.disable_checks = [
-    'anchor_resource',
-    'check_unsafe_interpolations',
-    'class_inherits_from_params_class',
-    'only_variable_string',
-    'parameter_types',
-    'params_empty_string_assignment',
-    'strict_indent',
-  ]
+
+  if File.exist?("#{Dir.pwd}/.puppet-lint.rc")
+    config.disable_checks = []
+  else
+    config.disable_checks = [
+      'anchor_resource',
+      'check_unsafe_interpolations',
+      'class_inherits_from_params_class',
+      'only_variable_string',
+      'parameter_types',
+      'params_empty_string_assignment',
+      'strict_indent',
+    ]
+  end
 end
 
 desc 'Run acceptance tests'
