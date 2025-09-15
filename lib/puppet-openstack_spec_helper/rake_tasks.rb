@@ -26,7 +26,6 @@ PuppetLint::RakeTask.new :lint do |config|
       'anchor_resource',
       'check_unsafe_interpolations',
       'class_inherits_from_params_class',
-      'only_variable_string',
       'parameter_types',
       'params_empty_string_assignment',
       'strict_indent',
