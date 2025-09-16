@@ -34,11 +34,6 @@ PuppetLint::RakeTask.new :lint do |config|
   end
 end
 
-desc 'Run acceptance tests'
-RSpec::Core::RakeTask.new(:acceptance) do |t|
-  t.pattern = 'spec/acceptance'
-end
-
 Rake::Task[:spec_prep].clear
 desc 'Create the fixtures directory'
 task :spec_prep do
