@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'voxpupuli-puppet-lint-plugins', '~> 6.0'
   spec.add_dependency 'puppet-lint-stdlib_deprecations'
 
-  spec.add_dependency 'json'
+  spec.add_dependency 'json', '< 3.0'
   spec.add_dependency 'webmock'
 
   spec.add_dependency 'r10k', ['>= 3.0.0']
